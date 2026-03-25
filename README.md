@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Install dependencies
 
@@ -40,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ChangaFlow/
@@ -111,7 +111,7 @@ ChangaFlow/
 
 ---
 
-## 🔑 M-Pesa Integration Guide
+##  M-Pesa Integration Guide
 
 ### Sandbox Testing
 
@@ -132,7 +132,7 @@ ChangaFlow/
 
 ---
 
-## 💳 Payment Flow
+##  Payment Flow
 
 ```
 User clicks "Donate"
@@ -156,7 +156,7 @@ Frontend polls GET /api/mpesa/status → shows success
 
 ---
 
-## 💰 Monetization
+##  Monetization
 
 Current: **2.5% platform fee** per confirmed donation (deduct in callback handler).
 
@@ -181,7 +181,7 @@ Future ideas:
 
 ---
 
-## 📦 Production Deployment
+##  Production Deployment
 
 ### Vercel (recommended)
 
@@ -203,10 +203,10 @@ Use PM2 + Nginx for production process management.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 PRs welcome! Please open an issue first.
 
 ---
 
-Built with ❤️ for Kenya 🇰🇪
+
