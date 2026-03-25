@@ -4,6 +4,7 @@ import connectDB from '@/lib/mongodb';
 import Fundraiser from '@/models/Fundraiser';
 import { getAuthUser } from '@/lib/auth';
 import { slugify } from '@/lib/utils';
+import type { SortOrder } from 'mongoose';
 
 // GET /api/fundraisers - list fundraisers with filters
 export async function GET(req: NextRequest) {
@@ -26,7 +27,7 @@ export async function GET(req: NextRequest) {
       query.$text = { $search: search };
     }
 
-    const sortMap: Record<string, Record<string, number>> = {
+    const sortMap: Record<string, Record<string, SortOrder>> = {
       recent:   { createdAt: -1 },
       trending: { donorCount: -1, amountRaised: -1 },
       ending:   { endDate: 1 },
