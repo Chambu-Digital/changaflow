@@ -6,7 +6,7 @@ import Fundraiser from '@/models/Fundraiser';
 import { getAuthUser } from '@/lib/auth';
 import { initiateSTKPush } from '@/lib/mpesa';
 
-export const ACTIVATION_FEE = 50; // KES
+const ACTIVATION_FEE = 50; // KES
 
 export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
   try {
