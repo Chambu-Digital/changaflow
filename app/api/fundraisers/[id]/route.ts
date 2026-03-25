@@ -14,7 +14,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       $or: [{ _id: params.id.match(/^[0-9a-fA-F]{24}$/) ? params.id : null }, { slug: params.id }],
     })
       .populate('creatorId', 'name phone verified avatar')
-      .lean();
+      .lean() as (Record<string, unknown> & { _id: unknown }) | null;
 
     if (!fundraiser) {
       return NextResponse.json({ error: 'Fundraiser not found' }, { status: 404 });
