@@ -7,7 +7,9 @@ export interface User {
   email?: string;
   avatar?: string;
   verified: boolean;
+  totalRaised: number;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface Fundraiser {
@@ -22,11 +24,16 @@ export interface Fundraiser {
   images: string[];
   creator: User;
   creatorId: string;
-  phoneNumber: string;         // M-Pesa receiving number
+  phoneNumber: string;
   paybillNumber?: string;
   status: 'pending' | 'active' | 'completed' | 'paused' | 'removed';
+  activationCheckoutId?: string;
+  platformFeeRate: number;
+  withdrawnAt?: string;
   verified: boolean;
   donorCount: number;
+  viewCount: number;
+  shareCount: number;
   updates: FundraiserUpdate[];
   endDate?: string;
   urgent: boolean;
@@ -60,8 +67,10 @@ export interface Donation {
   message?: string;
   anonymous: boolean;
   mpesaTransactionId?: string;
+  mpesaCheckoutRequestId?: string;
   status: 'pending' | 'confirmed' | 'failed';
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface MpesaSTKPushRequest {
