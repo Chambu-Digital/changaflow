@@ -33,7 +33,7 @@ export default function RegisterPage() {
       const json = await res.json();
       if (!json.success) throw new Error(json.error);
       setAuth(json.user, json.token);
-      toast.success(`Welcome to ChangaFlow, ${json.user.name.split(' ')[0]}! 🎉`);
+      toast.success(`Welcome to FundMi, ${json.user.name.split(' ')[0]}! 🎉`);
       router.push(searchParams.get('redirect') || '/dashboard');
     } catch (err: unknown) {
       toast.error(err instanceof Error ? err.message : 'Registration failed');
@@ -47,7 +47,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 font-display font-bold text-2xl mb-4" style={{ color: 'var(--color-brand)' }}>
-            ChangaFlow
+            FundMi
           </Link>
           <h1 className="font-display text-3xl font-bold mb-2">Create your account</h1>
           <p style={{ color: 'var(--color-muted)' }}>Start fundraising in under 2 minutes</p>

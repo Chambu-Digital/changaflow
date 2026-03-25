@@ -1,5 +1,5 @@
-// public/sw.js — ChangaFlow Service Worker
-const CACHE = 'changaflow-v1';
+// public/sw.js — FundMi Service Worker
+const CACHE = 'FundMi-v1';
 const STATIC = ['/', '/browse', '/how-it-works', '/manifest.json'];
 
 self.addEventListener('install', e => {

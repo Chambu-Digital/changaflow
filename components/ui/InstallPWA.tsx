@@ -22,7 +22,7 @@ export default function InstallPWA({ variant = 'button' }: Props) {
             <span className="text-white font-bold text-sm">CF</span>
           </div>
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-sm">Install ChangaFlow</p>
+            <p className="font-semibold text-sm">Install FundMi</p>
             <p className="text-xs truncate" style={{ color: 'var(--color-muted)' }}>Add to home screen for quick access</p>
           </div>
           <button onClick={install}

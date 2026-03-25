@@ -1,6 +1,6 @@
 {
-  "name": "ChangaFlow",
-  "short_name": "ChangaFlow",
+  "name": "FundMi",
+  "short_name": "FundMi",
   "description": "Raise money together via M-Pesa — Kenya's fastest fundraising platform",
   "start_url": "/",
   "display": "standalone",

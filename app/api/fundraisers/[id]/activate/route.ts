@@ -25,7 +25,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       phoneNumber: fundraiser.phoneNumber,
       amount: ACTIVATION_FEE,
       accountRef: `ACT-${fundraiser.slug}`.slice(0, 12),
-      description: 'ChangaFlow Activation',
+      description: 'FundMi Activation',
     });
 
     await Fundraiser.findByIdAndUpdate(params.id, {

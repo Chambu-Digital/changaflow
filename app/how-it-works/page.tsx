@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-14">
       <div className="text-center mb-16">
-        <h1 className="font-display text-5xl font-bold mb-4">How ChangaFlow Works</h1>
+        <h1 className="font-display text-5xl font-bold mb-4">How FundMi Works</h1>
         <p className="text-lg" style={{ color: 'var(--color-muted)' }}>
           Kenya's simplest fundraising platform powered by M-Pesa
         </p>
@@ -80,7 +80,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
         <p className="text-xs mt-4" style={{ color: 'var(--color-muted)' }}>
-          * ChangaFlow charges a 2.5% platform fee on each successful donation to keep the service running. There are no monthly fees or setup costs.
+          * FundMi charges a 2.5% platform fee on each successful donation to keep the service running. There are no monthly fees or setup costs.
         </p>
       </div>
 

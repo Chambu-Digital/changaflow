@@ -1,4 +1,4 @@
-# 🇰🇪 ChangaFlow — Kenya's M-Pesa Fundraising Platform
+# 🇰🇪 FundMi — Kenya's M-Pesa Fundraising Platform
 
 > The easiest way for Kenyans to raise and receive money via M-Pesa.
 
@@ -43,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## 📁 Project Structure
 
 ```
-ChangaFlow/
+FundMi/
 ├── app/                          # Next.js App Router
 │   ├── page.tsx                  # Homepage
 │   ├── browse/page.tsx           # Browse all fundraisers

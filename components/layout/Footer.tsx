@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-display font-bold text-lg mb-3" style={{ color: 'var(--color-brand)' }}>
-              ChangaFlow
+              FundMi
             </Link>
             <p className="text-sm" style={{ color: 'var(--color-muted)' }}>
               Kenya's fastest fundraising platform. Powered by M-Pesa.
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs" style={{ borderColor: 'var(--color-border)', color: 'var(--color-muted)' }}>
-          <p>© {new Date().getFullYear()} ChangaFlow Kenya Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} FundMi Kenya Ltd. All rights reserved.</p>
           <p>Built for Kenya 🇰🇪 · Powered by M-Pesa</p>
         </div>
       </div>

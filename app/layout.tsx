@@ -27,17 +27,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'ChangaFlow — Raise Money Together, Kenya',
+  title: 'FundMi — Raise Money Together, Kenya',
   description: 'The fastest way for Kenyans to raise money via M-Pesa. Create a fundraiser in under 2 minutes.',
-  keywords: 'fundraising kenya, mpesa fundraiser, ChangaFlow, crowdfunding kenya',
+  keywords: 'fundraising kenya, mpesa fundraiser, FundMi, crowdfunding kenya',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'ChangaFlow',
+    title: 'FundMi',
   },
   openGraph: {
-    title: 'ChangaFlow — Raise Money Together',
+    title: 'FundMi — Raise Money Together',
     description: 'Create a fundraiser and collect donations via M-Pesa instantly.',
     type: 'website',
   },

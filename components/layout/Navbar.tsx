@@ -19,7 +19,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-display font-bold text-lg md:text-xl flex-shrink-0"
           style={{ color: 'var(--color-brand)' }}>
-          ChangaFlow
+          FundMi
         </Link>
 
         {/* Desktop nav */}

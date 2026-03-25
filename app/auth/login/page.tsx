@@ -43,7 +43,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 font-display font-bold text-2xl mb-4" style={{ color: 'var(--color-brand)' }}>
-            ChangaFlow
+            FundMi
           </Link>
           <h1 className="font-display text-3xl font-bold mb-2">Welcome back</h1>
           <p style={{ color: 'var(--color-muted)' }}>Sign in to manage your fundraisers</p>

@@ -4,13 +4,19 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Zap, Smartphone, TrendingUp, Heart, Users } from 'lucide-react';
 import { useFundraisers } from '@/hooks/useFundraisers';
 import FundraiserCard from '@/components/fundraiser/FundraiserCard';
+import { useEffect, useState } from 'react';
 
-const STATS = [
-  { value: 'KES 2M+', label: 'Raised this month' },
-  { value: '1,200+', label: 'Active fundraisers' },
-  { value: '< 2 min', label: 'To start fundraising' },
-  { value: 'Instant', label: 'M-Pesa payouts' },
-];
+interface PlatformStats {
+  totalRaised: number;
+  activeFundraisers: number;
+  totalDonors: number;
+}
+
+function formatKES(amount: number): string {
+  if (amount >= 1_000_000) return `KES ${(amount / 1_000_000).toFixed(1)}M+`;
+  if (amount >= 1_000) return `KES ${(amount / 1_000).toFixed(0)}K+`;
+  return `KES ${amount.toLocaleString()}`;
+}
 
 const HOW = [
   { icon: Heart, title: 'Create your fundraiser', desc: 'Tell your story and set a goal in under 2 minutes. No paperwork.' },
@@ -28,6 +34,15 @@ const WHY = [
 export default function HomePage() {
   const { fundraisers, loading } = useFundraisers({ sort: 'trending' });
   const featured = fundraisers.slice(0, 3);
+
+  const [stats, setStats] = useState<PlatformStats | null>(null);
+
+  useEffect(() => {
+    fetch('/api/stats')
+      .then(r => r.json())
+      .then(setStats)
+      .catch(() => {});
+  }, []);
 
   return (
     <div>
@@ -50,7 +65,7 @@ export default function HomePage() {
 
           <p className="text-base md:text-xl mb-8 max-w-2xl mx-auto px-2" style={{ color: 'var(--color-muted)' }}>
             Start a fundraiser in under 2 minutes. Collect donations via M-Pesa instantly.
-            No complex forms, no long approval times — just ChangaFlow.
+            No complex forms, no long approval times. Just FundMi.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-0">
@@ -67,9 +82,16 @@ export default function HomePage() {
       {/* ── Stats ── */}
       <section className="border-y py-8" style={{ borderColor: 'var(--color-border)', background: 'var(--color-surface)' }}>
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {STATS.map((s, i) => (
+          {[
+            { value: stats ? formatKES(stats.totalRaised) : '—', label: 'Total raised' },
+            { value: stats ? `${stats.activeFundraisers.toLocaleString()}+` : '—', label: 'Active fundraisers' },
+            { value: stats ? `${stats.totalDonors.toLocaleString()}+` : '—', label: 'Donors' },
+            { value: '< 2 min', label: 'To start fundraising' },
+          ].map((s, i) => (
             <div key={i} className="text-center">
-              <div className="font-display text-3xl font-bold mb-1" style={{ color: 'var(--color-brand)' }}>{s.value}</div>
+              <div className="font-display text-3xl font-bold mb-1" style={{ color: 'var(--color-brand)' }}>
+                {s.value}
+              </div>
               <div className="text-sm" style={{ color: 'var(--color-muted)' }}>{s.label}</div>
             </div>
           ))}
@@ -112,7 +134,7 @@ export default function HomePage() {
       <section className="py-20 px-4" style={{ background: 'var(--color-surface)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl font-bold mb-2">How ChangaFlow Works</h2>
+            <h2 className="font-display text-3xl font-bold mb-2">How FundMi Works</h2>
             <p style={{ color: 'var(--color-muted)' }}>Three simple steps to start raising money</p>
           </div>
 
@@ -135,10 +157,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Why ChangaFlow ── */}
+      {/* ── Why FundMi ── */}
       <section className="max-w-5xl mx-auto px-4 py-20">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl font-bold mb-2">Why choose ChangaFlow?</h2>
+          <h2 className="font-display text-3xl font-bold mb-2">Why choose FundMi?</h2>
           <p style={{ color: 'var(--color-muted)' }}>Built for Kenya, unlike global platforms</p>
         </div>
 
@@ -162,7 +184,7 @@ export default function HomePage() {
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
           <div className="relative max-w-2xl mx-auto">
-            <h2 className="font-display text-4xl font-bold mb-4">Ready to start your ChangaFlow?</h2>
+            <h2 className="font-display text-4xl font-bold mb-4">Ready to start your FundMi?</h2>
             <p className="text-lg opacity-90 mb-8">
               Join thousands of Kenyans raising money for what matters most.
             </p>
