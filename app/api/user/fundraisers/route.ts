@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
 
     const fundraisers = await Fundraiser.find({ creatorId: user.userId })
       .sort({ createdAt: -1 })
-      .lean();
+      .lean() as any[];
 
     return NextResponse.json({ success: true, data: fundraisers });
   } catch (err) {

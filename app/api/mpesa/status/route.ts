@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     const donationId = new URL(req.url).searchParams.get('donationId');
     if (!donationId) return NextResponse.json({ error: 'donationId required' }, { status: 400 });
 
-    const donation = await Donation.findById(donationId).lean();
+    const donation = await Donation.findById(donationId).lean() as (Record<string, unknown> & { status: unknown; amount: unknown; mpesaTransactionId: unknown }) | null;
     if (!donation) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
     return NextResponse.json({

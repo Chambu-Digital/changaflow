@@ -30,7 +30,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     })
       .sort({ createdAt: -1 })
       .limit(20)
-      .lean();
+      .lean() as any[];
 
     return NextResponse.json({ success: true, data: { ...fundraiser, donations } });
   } catch (err) {
