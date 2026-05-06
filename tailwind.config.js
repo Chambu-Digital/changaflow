@@ -6,6 +6,10 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      'none': '0',
+      'DEFAULT': '0',
+    },
     extend: {
       fontFamily: {
         display: ['var(--font-display)', 'serif'],

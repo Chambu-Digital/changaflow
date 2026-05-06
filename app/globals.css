@@ -40,7 +40,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-semibold text-white
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-white
            transition-all duration-200 active:scale-95 cursor-pointer;
     background: var(--color-brand);
     box-shadow: 0 4px 14px rgba(255,107,10,0.35);
@@ -52,7 +52,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-semibold
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold
            transition-all duration-200 active:scale-95 cursor-pointer border-2;
     border-color: var(--color-border);
     color: var(--color-text);
@@ -64,7 +64,7 @@
   }
 
   .card {
-    @apply rounded-3xl overflow-hidden;
+    @apply overflow-hidden;
     background: white;
     border: 1px solid var(--color-border);
     box-shadow: 0 2px 12px rgba(160,120,64,0.08);
@@ -76,7 +76,7 @@
   }
 
   .input {
-    @apply w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200;
+    @apply w-full px-4 py-3 text-sm outline-none transition-all duration-200;
     background: white;
     border: 1.5px solid var(--color-border);
     color: var(--color-text);
@@ -94,17 +94,17 @@
   }
 
   .progress-bar {
-    @apply h-2.5 rounded-full overflow-hidden;
+    @apply h-2.5 overflow-hidden;
     background: #EDE0CC;
   }
   .progress-fill {
-    @apply h-full rounded-full;
+    @apply h-full;
     background: linear-gradient(90deg, var(--color-brand), #ffb570);
     animation: progress 1.2s ease-out forwards;
   }
 
   .badge {
-    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+    @apply inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold;
   }
   .badge-urgent {
     background: #fee2e2;
